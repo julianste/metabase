@@ -82,7 +82,7 @@ export function CurrentPicker(props: CurrentPickerProps) {
     filter: [operator, field, _intervals, unit],
   } = props;
   return (
-    <div className={className}>
+    <div className={className} data-testid="current-date-picker">
       {DATE_PERIODS.map((periods, index) => (
         <CurrentContainer key={periods.length} first={index === 0}>
           {periods.map(period => (
@@ -195,7 +195,7 @@ const RelativeDatePicker: React.FC<Props> = props => {
   const [optionsVisible, setOptionsVisible] = React.useState(false);
 
   const optionsContent = (
-    <OptionsContainer>
+    <OptionsContainer data-testid="relative-datetime-options-container">
       <OptionButton
         icon="arrow_left_to_line"
         primaryColor={primaryColor}
@@ -229,7 +229,7 @@ const RelativeDatePicker: React.FC<Props> = props => {
     <GridContainer
       className={className}
       numColumns={numColumns}
-      data-testid="relative-datetime-filter"
+      data-testid="relative-date-picker"
     >
       {startingFrom ? (
         <GridText>{intervals < 0 ? t`Past` : t`Next`}</GridText>
